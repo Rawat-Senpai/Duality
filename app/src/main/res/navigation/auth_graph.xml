@@ -30,4 +30,9 @@
         android:name="com.example.dualityapplication.ui.newPasswordFragment.NewPasswordFragmentScreen"
         android:label="fragment_new_password_screen"
         tools:layout="@layout/fragment_new_password_screen" />
+    <fragment
+        android:id="@+id/passwordUpdatedFragmentScreen"
+        android:name="com.example.dualityapplication.PasswordUpdatedFragmentScreen"
+        android:label="fragment_password_updated_screen"
+        tools:layout="@layout/fragment_password_updated_screen" />
 </navigation>

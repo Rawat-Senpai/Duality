@@ -145,7 +145,7 @@
 
 
             </LinearLayout>
-            
+
 
         </LinearLayout>
 
@@ -162,6 +162,7 @@
         android:fontFamily="@font/plus_jakarta_sans_semibold"
         android:lineHeight="22dp"
         android:text="Register"
+        android:layout_marginHorizontal="20dp"
         android:textSize="15sp"
         app:cornerRadius="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
