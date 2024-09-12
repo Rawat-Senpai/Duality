@@ -1,14 +1,344 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.registerFragment.RegisterFragmentScreen">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="30dp"
+        android:paddingHorizontal="20dp">
 
-</FrameLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/app_logo" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/plus_jakarta_sans_bold"
+                android:text="Log In"
+                android:textColor="@color/black"
+                android:textSize="25sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/plus_jakart_sans_medium"
+                android:text="Enter your registered email &amp; password" />
+
+
+            <LinearLayout style="@style/editTextLinearLayout"
+                android:layout_marginHorizontal="0dp">
+
+
+                <ImageView
+                    style="@style/editTextImageView"
+                    android:src="@drawable/ic_email" />
+
+                <EditText
+                    android:id="@+id/etEmail"
+                    style="@style/editTextStyle"
+                    android:layout_weight="1"
+                    android:hint="Email"
+                    android:inputType="textEmailAddress" />
+
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/emailValidation"
+                style="@style/editTextErrorMsg"
+                android:gravity="start"
+
+                android:visibility="gone" />
+
+            <LinearLayout style="@style/editTextLinearLayout"
+                android:layout_marginHorizontal="0dp">
+
+
+                <ImageView
+                    style="@style/editTextImageView"
+                    android:padding="@dimen/_2sdp"
+                    android:src="@drawable/ic_password" />
+
+                <EditText
+                    android:id="@+id/etPassword"
+                    style="@style/editTextStyle"
+                    android:layout_weight="1"
+                    android:hint="Password"
+                    android:inputType="textPassword"
+                    android:maxLength="16"
+
+                    />
+
+
+                <ImageView
+                    android:id="@+id/ivViewPassword"
+                    style="@style/editTextImageView"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:src="@drawable/ic_open_password" />
+
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/passwordValidation"
+                style="@style/editTextErrorMsg"
+                android:gravity="start"
+
+                android:visibility="gone" />
+
+
+            <LinearLayout style="@style/editTextLinearLayout"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginHorizontal="0dp"
+                >
+
+                <ImageView
+                    style="@style/editTextImageView"
+                    android:padding="@dimen/_2sdp"
+                    android:src="@drawable/ic_password" />
+
+                <EditText
+                    android:id="@+id/etConfirmPassword"
+                    style="@style/editTextStyle"
+                    android:layout_weight="1"
+                    android:hint="Confirm Password"
+                    android:inputType="textPassword"/>
+
+                <ImageView
+                    android:id="@+id/ivViewConfPassword"
+                    style="@style/editTextImageView"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:src="@drawable/ic_open_password" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/confirmPassValidation"
+                style="@style/editTextErrorMsg"
+                android:gravity="start"
+
+                android:visibility="gone"
+                />
+
+            <LinearLayout
+                android:id="@+id/checkBoxLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:background="@color/transparent"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/checkBoxLayout2"
+                    android:layout_width="20sp"
+                    android:background="@color/transparent"
+                    android:layout_height="40sp"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    >
+
+                    <CheckBox
+                        android:id="@+id/licheckbox"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:button="@drawable/checkbox_selector"
+
+                        />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/checkBoxTC"
+                    android:text="I accept"
+                    style="@style/subHeadingText"
+                    android:layout_marginStart="@dimen/_6sdp"
+                    android:textSize="@dimen/_10sdp"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical"
+                    />
+
+                <TextView
+                    android:id="@+id/tvTermAndCondition"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_2sdp"
+                    android:text="Terms &amp; Conditions, "
+                    android:textSize="@dimen/_10sdp"
+                    android:background="@color/transparent"
+                    android:textColor="#0484B3"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical"
+                    />
+
+
+
+            </LinearLayout>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/continueBtn"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="20dp"
+                android:backgroundTint="#0484B3"
+                android:enabled="true"
+                android:fontFamily="@font/plus_jakarta_sans_semibold"
+                android:lineHeight="22dp"
+                android:text="Continue"
+                android:textSize="15sp"
+                app:cornerRadius="8dp" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="14dp"
+                android:gravity="center"
+
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="20dp"
+                    android:layout_height="1dp"
+                    android:background="@color/black" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="8dp"
+                    android:fontFamily="@font/plus_jakarta_sans_bold"
+                    android:lineHeight="20dp"
+                    android:text="OR"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+
+                <View
+                    android:layout_width="20dp"
+                    android:layout_height="1dp"
+                    android:background="@color/black" />
+            </LinearLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+
+                android:layout_marginTop="24dp"
+                android:background="@drawable/button_bg">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/google_icon" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8sp"
+                        android:fontFamily="@font/plus_jakarta_sans_semibold"
+                        android:lineHeight="22dp"
+                        android:text="Login with Google"
+                        android:textColor="@color/textColor"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/button_bg">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/apple_logo" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8sp"
+                        android:fontFamily="@font/plus_jakarta_sans_semibold"
+                        android:lineHeight="22dp"
+                        android:text="Login with Apple"
+                        android:textColor="@color/textColor"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:elevation="5dp"
+        android:layout_marginBottom="20dp"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/plus_jakart_sans_medium"
+            android:text="Already have an account ? " />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/plus_jakart_sans_medium"
+            android:text="Login"
+            android:textColor="#0484B3" />
+
+    </LinearLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
