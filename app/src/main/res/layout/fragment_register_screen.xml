@@ -112,6 +112,16 @@
 
                 android:visibility="gone" />
 
+            <TextView
+                android:id="@+id/passwordStrength"
+                style="@style/subHeadingText"
+                android:layout_gravity="end"
+                android:layout_marginEnd="15dp"
+                android:layout_marginTop="1dp"
+                android:textColor="#F84911"
+                android:textSize="@dimen/_10sdp"
+                android:textStyle="normal"
+                android:visibility="visible"/>
 
             <LinearLayout style="@style/editTextLinearLayout"
                 android:layout_marginTop="@dimen/_10sdp"
@@ -328,6 +338,7 @@
                     android:text="Already have an account ? " />
 
                 <TextView
+                    android:id="@+id/loginBtn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/plus_jakart_sans_medium"
@@ -339,6 +350,18 @@
         </LinearLayout>
 
     </androidx.core.widget.NestedScrollView>
+
+
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 

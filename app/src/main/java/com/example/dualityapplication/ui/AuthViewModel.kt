@@ -5,6 +5,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.dualityapplication.models.LoginRequestModel
 import com.example.dualityapplication.models.LoginResponsModel
+import com.example.dualityapplication.models.SignUpRequestModel
+import com.example.dualityapplication.models.SignUpResponseModel
 import com.example.dualityapplication.repository.UserRepository
 import com.example.dualityapplication.utils.NetworkResult
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -21,6 +23,14 @@ class AuthViewModel @Inject constructor(private val userRepository: UserReposito
          userRepository.loginUser(user)
       }
    }
+
+   val userSignUpLiveData : LiveData<NetworkResult<SignUpResponseModel>?> get() = userRepository.signUpUser
+
+      fun signUpUser(user:SignUpRequestModel){
+         viewModelScope.launch {
+            userRepository.signUpUser(user)
+         }
+      }
 
 
 }

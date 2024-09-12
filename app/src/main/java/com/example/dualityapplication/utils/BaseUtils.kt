@@ -58,13 +58,19 @@ class BaseUtils {
             return try {
                 val response = apiCall()
                 if (response.isSuccessful && response.body() != null) {
+                    Log.d("checkingDataSuccess",response.toString())
                     NetworkResult.Success(response.body()!!)
                 } else if (response.isSuccessful && response.body() == null) {
+                    Log.d("checkingDataFail",response.toString())
                     NetworkResult.Error("Response body is null")
-                } else {
-                    NetworkResult.Error(response.message())
+                } else if(response.code()==409) {
+                    Log.d("checkingDataError",response.toString())
+                    NetworkResult.Error("User Already Registered")
+                }else{
+                    NetworkResult.Error("Something went wrong")
                 }
             } catch (e: Exception) {
+                Log.d("checkingDataCrash",e.toString())
                 NetworkResult.Error(e.message ?: "An unknown error occurred")
             }
         }
