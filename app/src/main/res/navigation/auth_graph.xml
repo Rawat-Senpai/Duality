@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/auth_graph"
+    app:startDestination="@id/loginFragmentScreen">
+
+    <fragment
+        android:id="@+id/loginFragmentScreen"
+        android:name="com.example.dualityapplication.ui.loginFragment.LoginFragmentScreen"
+        android:label="fragment_login_screen"
+        tools:layout="@layout/fragment_login_screen" />
+    <fragment
+        android:id="@+id/registerFragmentScreen"
+        android:name="com.example.dualityapplication.ui.registerFragment.RegisterFragmentScreen"
+        android:label="fragment_register_screen"
+        tools:layout="@layout/fragment_register_screen" />
+    <fragment
+        android:id="@+id/profileFragmentScreen"
+        android:name="com.example.dualityapplication.ui.profileFragment.ProfileFragmentScreen"
+        android:label="fragment_profile_screen"
+        tools:layout="@layout/fragment_profile_screen" />
+    <fragment
+        android:id="@+id/forgotFragmentScreen"
+        android:name="com.example.dualityapplication.ui.forgotFragment.ForgotFragmentScreen"
+        android:label="fragment_forgot_screen"
+        tools:layout="@layout/fragment_forgot_screen" />
+    <fragment
+        android:id="@+id/newPasswordFragmentScreen"
+        android:name="com.example.dualityapplication.ui.newPasswordFragment.NewPasswordFragmentScreen"
+        android:label="fragment_new_password_screen"
+        tools:layout="@layout/fragment_new_password_screen" />
+</navigation>

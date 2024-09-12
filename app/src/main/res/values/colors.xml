@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+
+    <color name="transparent">#00000000</color>
+
+    <color name="appColor">#0764FD</color>
+
+    <color name="textColor">#182224</color>
+
+    <color name="errorColor">#E45024</color>
+
+    <color name="lightGray">#EFEFEF</color>
+
+    <color name="lightTextColor">#8D182224</color>
+
+    <color name="yellow">#F4C13C</color>
+    <color name="orange">#FE7E00</color>
+
+    <color name="completedColor">#34A356</color>
+    <color name="cancelledColor">#E45024</color>
+
+    <color name="darkTransparent">#801C1C1C</color>
+
+    <color name="grey">#B0ADAB</color>
+    <color name="darkGrey">#333333</color>
+
+    <color name="red">#FF1100</color>
+    <color name="green">#03FA0B</color>
+
+
+
+
+
+</resources>
