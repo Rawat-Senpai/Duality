@@ -73,7 +73,8 @@ class RegisterFragmentScreen : Fragment() {
                 }
 
                 is NetworkResult.Success -> {
-                    showToast(requireContext(),"success")
+//                    showToast(requireContext(),"success")
+                    findNavController().navigate(R.id.action_registerFragmentScreen_to_profileFragmentScreen)
                     Log.d("success",it.data.toString())
 
                 }
@@ -86,6 +87,10 @@ class RegisterFragmentScreen : Fragment() {
 
     private fun bindViews() {
         binding.apply {
+
+            icon.setOnClickListener(){
+                findNavController().navigate(R.id.action_registerFragmentScreen_to_profileFragmentScreen)
+            }
 
             loginBtn.setOnClickListener(){
                 findNavController().popBackStack()

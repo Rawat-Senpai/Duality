@@ -1,6 +1,9 @@
 package com.example.dualityapplication.di
 
+import android.provider.SyncStateContract
 import com.example.dualityapplication.api.AuthApi
+import com.example.dualityapplication.api.AuthInterceptor
+import com.example.dualityapplication.api.UserApi
 import com.example.dualityapplication.utils.Util
 import dagger.Module
 import dagger.Provides
@@ -24,18 +27,27 @@ class NetworkModule {
 
     @Singleton
     @Provides
-    fun providesRetrofit(): Retrofit.Builder{
-        return Retrofit.Builder()
+    fun providesRetrofit(): Retrofit.Builder {
+        return Retrofit.Builder().baseUrl(Util.BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
-            .baseUrl(Util.BASE_URL)
-            .client(client)
-
+    }
+    @Singleton
+    @Provides
+    fun provideOkHttpClient(interceptor: AuthInterceptor): OkHttpClient {
+        return OkHttpClient.Builder().addInterceptor(interceptor).build()
     }
 
     @Singleton
     @Provides
-    fun providesUserApi(retrofitBuilder: Retrofit.Builder): AuthApi {
-        return retrofitBuilder.client(client).build().create(AuthApi::class.java)
+    fun providesAuthAPI(retrofitBuilder: Retrofit.Builder): AuthApi {
+        return retrofitBuilder.build().create(AuthApi::class.java)
     }
+
+    @Singleton
+    @Provides
+    fun providesUserAPI(retrofitBuilder: Retrofit.Builder, okHttpClient: OkHttpClient): UserApi {
+        return retrofitBuilder.client(okHttpClient).build().create(UserApi::class.java)
+    }
+
 
 }

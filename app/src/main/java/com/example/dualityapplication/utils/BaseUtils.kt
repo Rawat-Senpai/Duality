@@ -1,31 +1,13 @@
 package com.example.dualityapplication.utils
 
-import android.app.Activity
 import android.content.Context
-import android.content.res.Configuration
-import android.graphics.Color
-import android.graphics.PorterDuff
-import android.net.ConnectivityManager
-import android.os.Build
-import android.os.Handler
 import android.util.Log
 import android.view.Gravity
 import android.view.View
-import android.view.WindowManager
-import android.widget.ImageView
-import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
-import androidx.annotation.RequiresApi
-import androidx.appcompat.app.AppCompatDelegate
-import androidx.constraintlayout.widget.Constraints
-import androidx.core.content.ContextCompat
+import com.example.dualityapplication.models.LoginResponsModel
 import retrofit2.Response
-import java.text.DateFormat
-import java.text.SimpleDateFormat
-import java.util.Calendar
-import java.util.Date
-import java.util.Locale
 import java.util.Objects
 import java.util.TimeZone
 
