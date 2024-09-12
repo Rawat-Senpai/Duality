@@ -9,12 +9,23 @@
         android:id="@+id/loginFragmentScreen"
         android:name="com.example.dualityapplication.ui.loginFragment.LoginFragmentScreen"
         android:label="fragment_login_screen"
-        tools:layout="@layout/fragment_login_screen" />
+        tools:layout="@layout/fragment_login_screen" >
+        <action
+            android:id="@+id/action_loginFragmentScreen_to_registerFragmentScreen"
+            app:destination="@id/registerFragmentScreen" />
+        <action
+            android:id="@+id/action_loginFragmentScreen_to_forgotFragmentScreen"
+            app:destination="@id/forgotFragmentScreen" />
+    </fragment>
     <fragment
         android:id="@+id/registerFragmentScreen"
         android:name="com.example.dualityapplication.ui.registerFragment.RegisterFragmentScreen"
         android:label="fragment_register_screen"
-        tools:layout="@layout/fragment_register_screen" />
+        tools:layout="@layout/fragment_register_screen" >
+        <action
+            android:id="@+id/action_registerFragmentScreen_to_profileFragmentScreen"
+            app:destination="@id/profileFragmentScreen" />
+    </fragment>
     <fragment
         android:id="@+id/profileFragmentScreen"
         android:name="com.example.dualityapplication.ui.profileFragment.ProfileFragmentScreen"
@@ -24,12 +35,20 @@
         android:id="@+id/forgotFragmentScreen"
         android:name="com.example.dualityapplication.ui.forgotFragment.ForgotFragmentScreen"
         android:label="fragment_forgot_screen"
-        tools:layout="@layout/fragment_forgot_screen" />
+        tools:layout="@layout/fragment_forgot_screen" >
+        <action
+            android:id="@+id/action_forgotFragmentScreen_to_newPasswordFragmentScreen"
+            app:destination="@id/newPasswordFragmentScreen" />
+    </fragment>
     <fragment
         android:id="@+id/newPasswordFragmentScreen"
         android:name="com.example.dualityapplication.ui.newPasswordFragment.NewPasswordFragmentScreen"
         android:label="fragment_new_password_screen"
-        tools:layout="@layout/fragment_new_password_screen" />
+        tools:layout="@layout/fragment_new_password_screen" >
+        <action
+            android:id="@+id/action_newPasswordFragmentScreen_to_passwordUpdatedFragmentScreen"
+            app:destination="@id/passwordUpdatedFragmentScreen" />
+    </fragment>
     <fragment
         android:id="@+id/passwordUpdatedFragmentScreen"
         android:name="com.example.dualityapplication.PasswordUpdatedFragmentScreen"
