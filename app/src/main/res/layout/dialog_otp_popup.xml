@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="300dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="16dp"
+    app:cardCornerRadius="20dp"
+    android:layout_margin="10dp"
+    android:background="@android:color/white">
+    
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+
+
+
+        <!-- Cancel Button -->
+        <TextView
+            android:id="@+id/cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cancel"
+            android:textSize="16sp"
+            android:textColor="@android:color/holo_blue_light"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:padding="16dp"
+            android:layout_marginTop="16dp" />
+
+        <!-- Title -->
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Verify Your Number"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="32dp" />
+
+        <!-- Description -->
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Please enter the digit code sent to your Email address"
+            android:textSize="14sp"
+            android:layout_below="@+id/title"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="8dp" />
+
+        <!-- Code Input Fields -->
+        <LinearLayout
+            android:id="@+id/code_input"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@+id/description"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp">
+
+            <EditText
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/code_input_background"
+                android:gravity="center"
+                android:textSize="18sp"
+                android:maxLength="1"
+                android:inputType="number"
+                android:padding="8dp" />
+
+            <EditText
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/code_input_background"
+                android:gravity="center"
+                android:textSize="18sp"
+                android:maxLength="1"
+                android:inputType="number"
+                android:padding="8dp"
+                android:layout_marginStart="8dp" />
+
+            <EditText
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/code_input_background"
+                android:gravity="center"
+                android:textSize="18sp"
+                android:maxLength="1"
+                android:inputType="number"
+                android:padding="8dp"
+                android:layout_marginStart="8dp" />
+
+            <EditText
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/code_input_background"
+                android:gravity="center"
+                android:textSize="18sp"
+                android:maxLength="1"
+                android:inputType="number"
+                android:padding="8dp"
+                android:layout_marginStart="8dp" />
+        </LinearLayout>
+
+        <!-- Resend Code Link -->
+        <TextView
+            android:id="@+id/resend_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/continueBtn"
+
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="10dp"
+            android:text="Resend Code"
+
+            android:textColor="@android:color/holo_blue_light"
+            android:textSize="16sp" />
+
+        <!-- Continue Button -->
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/continueBtn"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="#0484B3"
+            android:enabled="true"
+            android:fontFamily="@font/plus_jakarta_sans_semibold"
+            android:lineHeight="22dp"
+            android:text="Update Password"
+            android:textAllCaps="true"
+            android:textSize="15sp"
+            app:cornerRadius="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
