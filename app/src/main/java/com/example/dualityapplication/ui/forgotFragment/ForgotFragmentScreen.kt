@@ -161,6 +161,11 @@ class ForgotFragmentScreen : Fragment() {
 
         binding.apply {
 
+            backBtn.setOnClickListener(){
+                findNavController().popBackStack()
+            }
+
+
             continueBtn.setOnClickListener() {
                 checkValidation()
             }

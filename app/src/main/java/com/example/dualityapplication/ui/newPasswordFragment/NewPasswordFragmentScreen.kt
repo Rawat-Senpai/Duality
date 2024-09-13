@@ -106,6 +106,10 @@ class NewPasswordFragmentScreen : Fragment() {
     private fun bindViews() {
         binding.apply {
 
+            backBtn.setOnClickListener(){
+                findNavController().popBackStack()
+            }
+
             ivViewPassword.setOnClickListener() {
                 if (showPasswordCreate) {
                     showPasswordCreate = false

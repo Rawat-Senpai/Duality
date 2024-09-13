@@ -2,6 +2,7 @@ package com.example.dualityapplication.ui.registerFragment
 
 import android.os.Bundle
 import android.text.Editable
+import android.text.InputType
 import android.text.TextWatcher
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -37,6 +38,11 @@ class RegisterFragmentScreen : Fragment() {
     private val viewModel by viewModels<AuthViewModel>()
     @Inject
     lateinit var tokenManager: TokenManager
+
+
+    private var showPasswordCreate = false
+    private var showPasswordConf = false
+
 
 
 
@@ -96,6 +102,37 @@ class RegisterFragmentScreen : Fragment() {
 
             icon.setOnClickListener(){
                 findNavController().navigate(R.id.action_registerFragmentScreen_to_profileFragmentScreen)
+            }
+
+            ivViewPassword.setOnClickListener() {
+                if (showPasswordCreate) {
+                    showPasswordCreate = false
+                    binding.ivViewPassword.setImageResource(R.drawable.ic_open_password)
+                    binding.etPassword.inputType =
+                        InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
+                } else {
+                    showPasswordCreate = true
+                    binding.ivViewPassword.setImageResource(R.drawable.ic_show_pass)
+                    binding.etPassword.inputType =
+                        InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
+                }
+                binding.etPassword.setSelection(binding.etPassword.text.length)
+
+            }
+
+            ivViewConfPassword.setOnClickListener() {
+                if (showPasswordConf) {
+                    showPasswordConf = false
+                    binding.ivViewConfPassword.setImageResource(R.drawable.ic_open_password)
+                    binding.etConfirmPassword.inputType =
+                        InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
+                } else {
+                    showPasswordConf = true
+                    binding.ivViewConfPassword.setImageResource(R.drawable.ic_show_pass)
+                    binding.etConfirmPassword.inputType =
+                        InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
+                }
+                binding.etConfirmPassword.setSelection(binding.etConfirmPassword.text.length)
             }
 
             loginBtn.setOnClickListener(){

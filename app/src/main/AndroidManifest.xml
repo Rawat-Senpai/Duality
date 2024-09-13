@@ -13,6 +13,8 @@
         android:name=".MyApplication"
         android:theme="@style/AppTheme"
         android:allowBackup="true"
+        android:logo="@drawable/app_logo"
+
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
