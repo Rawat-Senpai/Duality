@@ -6,6 +6,12 @@
         <item name="android:textColor">@color/black</item>
     </style>
 
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Other theme attributes -->
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:statusBarColor">@android:color/white</item>
+    </style>
+
     <style name="editTextLinearLayout">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
