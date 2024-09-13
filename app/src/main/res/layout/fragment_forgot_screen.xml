@@ -8,6 +8,7 @@
 
     <RelativeLayout
         android:id="@+id/headingRv"
+        android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         app:layout_constraintEnd_toEndOf="parent"
@@ -69,7 +70,7 @@
             android:textSize="15sp" />
 
         <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/emailIdEdt"
+            android:id="@+id/etEmail"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_marginTop="28dp"
@@ -80,6 +81,13 @@
             android:paddingHorizontal="16dp"
             android:paddingVertical="8dp"
             android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/emailValidation"
+            style="@style/editTextErrorMsg"
+            android:gravity="start"
+            android:visibility="gone" />
+
 
         <TextView
             android:layout_width="match_parent"
@@ -124,6 +132,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginBottom="20dp"/>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

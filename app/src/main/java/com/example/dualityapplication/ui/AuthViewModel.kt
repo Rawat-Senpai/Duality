@@ -3,6 +3,10 @@ package com.example.dualityapplication.ui
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.dualityapplication.models.ChangePasswordRequestModel
+import com.example.dualityapplication.models.ChangePasswordResponseModel
+import com.example.dualityapplication.models.ForgotPasswordRequestModel
+import com.example.dualityapplication.models.ForgotPasswordResponseModel
 import com.example.dualityapplication.models.LoginRequestModel
 import com.example.dualityapplication.models.LoginResponsModel
 import com.example.dualityapplication.models.SignUpRequestModel
@@ -31,6 +35,26 @@ class AuthViewModel @Inject constructor(private val userRepository: UserReposito
             userRepository.signUpUser(user)
          }
       }
+
+   val userForgotPasswordLiveData:LiveData<NetworkResult<ForgotPasswordResponseModel>?> get() = userRepository.userForgotPassword
+
+
+   fun forgotPassword(user:ForgotPasswordRequestModel){
+      viewModelScope.launch {
+         userRepository.forgotPassword(user)
+      }
+   }
+
+
+   val changePasswordLiveData:LiveData<NetworkResult<ChangePasswordResponseModel>?> get() = userRepository.changePasswordResponse
+
+
+   fun changePassword(user:ChangePasswordRequestModel,token:String){
+      viewModelScope.launch {
+         userRepository.changePassword(user,token)
+      }
+   }
+
 
 
 }

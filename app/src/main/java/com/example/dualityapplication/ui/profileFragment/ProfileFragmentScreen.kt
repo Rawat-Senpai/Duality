@@ -30,8 +30,10 @@ import com.example.dualityapplication.utils.BaseUtils.Companion.showToast
 import com.example.dualityapplication.utils.InternetConnection.isNetworkAvailable
 import com.example.dualityapplication.utils.NetworkResult
 import com.example.dualityapplication.utils.Util
+import dagger.hilt.android.AndroidEntryPoint
 
 
+@AndroidEntryPoint
 class ProfileFragmentScreen : Fragment() {
 
     private var _binding: FragmentProfileScreenBinding? = null
@@ -111,7 +113,7 @@ class ProfileFragmentScreen : Fragment() {
                 }
 
                 is NetworkResult.Success -> {
-//                    showToast(requireContext(),"success")
+                    showToast(requireContext(),"success")
 
                     Log.d("success",it.data.toString())
 

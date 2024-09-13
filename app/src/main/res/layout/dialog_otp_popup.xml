@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="300dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:padding="16dp"
+    android:padding="20dp"
     app:cardCornerRadius="20dp"
     android:layout_margin="10dp"
     android:background="@android:color/white">
@@ -32,11 +32,12 @@
             android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/cancel"
+            android:layout_centerHorizontal="true"
+
             android:text="Verify Your Number"
             android:textSize="18sp"
-            android:textStyle="bold"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="32dp" />
+            android:textStyle="bold" />
 
         <!-- Description -->
         <TextView
@@ -60,6 +61,7 @@
             android:layout_marginTop="16dp">
 
             <EditText
+                android:id="@+id/otp1"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:background="@drawable/code_input_background"
@@ -70,6 +72,7 @@
                 android:padding="8dp" />
 
             <EditText
+                android:id="@+id/otp2"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:background="@drawable/code_input_background"
@@ -81,6 +84,7 @@
                 android:layout_marginStart="8dp" />
 
             <EditText
+                android:id="@+id/otp3"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:background="@drawable/code_input_background"
@@ -92,6 +96,7 @@
                 android:layout_marginStart="8dp" />
 
             <EditText
+                android:id="@+id/otp4"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:background="@drawable/code_input_background"
@@ -123,7 +128,7 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/continueBtn"
             android:layout_width="match_parent"
-            android:layout_height="54dp"
+            android:layout_height="50dp"
             android:layout_alignParentBottom="true"
             android:layout_marginHorizontal="20dp"
             android:layout_marginBottom="10dp"

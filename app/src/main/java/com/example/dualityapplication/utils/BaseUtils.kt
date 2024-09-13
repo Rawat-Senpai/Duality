@@ -48,7 +48,12 @@ class BaseUtils {
                 } else if(response.code()==409) {
                     Log.d("checkingDataError",response.toString())
                     NetworkResult.Error("User Already Registered")
-                }else{
+                }else if (response.code()==404){
+                    Log.d("checkingDataError",response.toString())
+                    NetworkResult.Error("User Not Registered")
+                }
+                else{
+                    Log.d("checkingDataelse ",response.toString())
                     NetworkResult.Error("Something went wrong")
                 }
             } catch (e: Exception) {

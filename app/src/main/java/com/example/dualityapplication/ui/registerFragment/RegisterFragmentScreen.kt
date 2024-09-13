@@ -23,8 +23,10 @@ import com.example.dualityapplication.utils.BaseUtils.Companion.showToast
 import com.example.dualityapplication.utils.InternetConnection.isNetworkAvailable
 import com.example.dualityapplication.utils.NetworkResult
 import com.example.dualityapplication.utils.PasswordStrength
+import com.example.dualityapplication.utils.TokenManager
 import dagger.hilt.android.AndroidEntryPoint
 import java.util.regex.Pattern
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class RegisterFragmentScreen : Fragment() {
@@ -33,6 +35,9 @@ class RegisterFragmentScreen : Fragment() {
     private var strengthText = ""
      val binding get() = _binding!!
     private val viewModel by viewModels<AuthViewModel>()
+    @Inject
+    lateinit var tokenManager: TokenManager
+
 
 
     override fun onCreateView(
@@ -74,6 +79,7 @@ class RegisterFragmentScreen : Fragment() {
 
                 is NetworkResult.Success -> {
 //                    showToast(requireContext(),"success")
+                    tokenManager.saveToken(it.data?.data.toString())
                     findNavController().navigate(R.id.action_registerFragmentScreen_to_profileFragmentScreen)
                     Log.d("success",it.data.toString())
 

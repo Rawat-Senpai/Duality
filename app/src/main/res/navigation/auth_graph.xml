@@ -51,7 +51,7 @@
     </fragment>
     <fragment
         android:id="@+id/passwordUpdatedFragmentScreen"
-        android:name="com.example.dualityapplication.PasswordUpdatedFragmentScreen"
+        android:name="com.example.dualityapplication.ui.passwordUpdatedPackage.PasswordUpdatedFragmentScreen"
         android:label="fragment_password_updated_screen"
         tools:layout="@layout/fragment_password_updated_screen" />
 </navigation>
