@@ -24,12 +24,14 @@ import com.example.dualityapplication.utils.BaseUtils
 import com.example.dualityapplication.utils.BaseUtils.Companion.showToast
 import com.example.dualityapplication.utils.InternetConnection.isNetworkAvailable
 import com.example.dualityapplication.utils.NetworkResult
+import com.example.dualityapplication.utils.TokenManager
 import com.google.gson.Gson
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class ForgotFragmentScreen : Fragment() {
@@ -39,6 +41,8 @@ class ForgotFragmentScreen : Fragment() {
     private val binding get() = _binding!!
 
     private val viewModel by viewModels<AuthViewModel>()
+    @Inject
+    lateinit var tokenManager: TokenManager
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -82,6 +86,7 @@ class ForgotFragmentScreen : Fragment() {
 
                 is NetworkResult.Success -> {
                     Log.d("success", it.data.toString())
+                    tokenManager.saveId(it.data?.data?._id.toString())
                     openAlert(it.data)
 
                 }
@@ -106,7 +111,7 @@ class ForgotFragmentScreen : Fragment() {
         dialog.show()
         // Optionally: Set the dialog window's background to transparent (if needed)
         // Convert DP to Pixels
-        val heightInDp = 300 // Desired height in DP
+        val heightInDp = 350 // Desired height in DP
         val heightInPx = TypedValue.applyDimension(
             TypedValue.COMPLEX_UNIT_DIP, heightInDp.toFloat(), resources.displayMetrics
         ).toInt()

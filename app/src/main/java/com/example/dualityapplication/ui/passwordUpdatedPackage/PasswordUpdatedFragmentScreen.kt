@@ -31,7 +31,8 @@ class PasswordUpdatedFragmentScreen : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.apply {
             continueBtn.setOnClickListener(){
-                findNavController().popBackStack()
+//                findNavController().popBackStack()
+                findNavController().navigate(R.id.action_passwordUpdatedFragmentScreen_to_loginFragmentScreen)
             }
         }
     }

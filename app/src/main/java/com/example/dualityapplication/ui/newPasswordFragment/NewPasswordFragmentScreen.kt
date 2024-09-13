@@ -26,10 +26,13 @@ import com.example.dualityapplication.utils.InternetConnection.isNetworkAvailabl
 import com.example.dualityapplication.utils.NetworkResult
 import com.example.dualityapplication.utils.PasswordStrength
 import com.example.dualityapplication.utils.TokenManager
+import dagger.hilt.android.AndroidEntryPoint
+import dagger.hilt.android.HiltAndroidApp
 import java.util.regex.Pattern
 import javax.inject.Inject
 
 
+@AndroidEntryPoint
 class NewPasswordFragmentScreen : Fragment() {
 
     private var _binding: FragmentNewPasswordScreenBinding? = null
@@ -280,7 +283,7 @@ class NewPasswordFragmentScreen : Fragment() {
             if (isNetworkAvailable(requireContext())) {
                 viewModel.changePassword(
                     ChangePasswordRequestModel(confirmPass, password, otp),
-                    tokenManager.getToken().toString()
+                    tokenManager.getId().toString()
                 )
             } else {
                 showToast(requireContext(), "Please check your internet connection")

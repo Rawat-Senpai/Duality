@@ -16,6 +16,13 @@
         <action
             android:id="@+id/action_loginFragmentScreen_to_forgotFragmentScreen"
             app:destination="@id/forgotFragmentScreen" />
+        <action
+            android:id="@+id/action_loginFragmentScreen_to_homePageFragmentScreen"
+            app:destination="@id/homePageFragmentScreen"
+            app:popUpTo="@id/loginFragmentScreen"
+
+            app:popUpToInclusive="true"
+            />
     </fragment>
     <fragment
         android:id="@+id/registerFragmentScreen"
@@ -30,7 +37,13 @@
         android:id="@+id/profileFragmentScreen"
         android:name="com.example.dualityapplication.ui.profileFragment.ProfileFragmentScreen"
         android:label="fragment_profile_screen"
-        tools:layout="@layout/fragment_profile_screen" />
+        tools:layout="@layout/fragment_profile_screen" >
+        <action
+            android:id="@+id/action_profileFragmentScreen_to_homePageFragmentScreen"
+            app:destination="@id/homePageFragmentScreen"
+            app:popUpTo="@id/loginFragmentScreen"
+            app:popUpToInclusive="true"/>
+    </fragment>
     <fragment
         android:id="@+id/forgotFragmentScreen"
         android:name="com.example.dualityapplication.ui.forgotFragment.ForgotFragmentScreen"
@@ -47,11 +60,34 @@
         tools:layout="@layout/fragment_new_password_screen" >
         <action
             android:id="@+id/action_newPasswordFragmentScreen_to_passwordUpdatedFragmentScreen"
-            app:destination="@id/passwordUpdatedFragmentScreen" />
+            app:destination="@id/passwordUpdatedFragmentScreen"
+
+            app:popUpTo="@id/loginFragmentScreen"
+            app:popUpToInclusive="true"
+            />
     </fragment>
     <fragment
         android:id="@+id/passwordUpdatedFragmentScreen"
         android:name="com.example.dualityapplication.ui.passwordUpdatedPackage.PasswordUpdatedFragmentScreen"
         android:label="fragment_password_updated_screen"
-        tools:layout="@layout/fragment_password_updated_screen" />
+        tools:layout="@layout/fragment_password_updated_screen" >
+        <action
+            android:id="@+id/action_passwordUpdatedFragmentScreen_to_loginFragmentScreen"
+            app:destination="@id/loginFragmentScreen"
+            app:popUpTo="@id/passwordUpdatedFragmentScreen"
+            app:popUpToInclusive="true"/>
+    </fragment>
+    <fragment
+        android:id="@+id/homePageFragmentScreen"
+        android:name="com.example.dualityapplication.ui.homePageFragmentPackage.HomePageFragmentScreen"
+        android:label="fragment_home_page_screen"
+        tools:layout="@layout/fragment_home_page_screen"
+
+        >
+        <action
+            android:id="@+id/action_homePageFragmentScreen_to_loginFragmentScreen"
+            app:destination="@id/loginFragmentScreen"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/homePageFragmentScreen"/>
+    </fragment>
 </navigation>

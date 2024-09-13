@@ -115,6 +115,7 @@ class ProfileFragmentScreen : Fragment() {
                 is NetworkResult.Success -> {
                     showToast(requireContext(),"success")
 
+                    findNavController().navigate(R.id.action_profileFragmentScreen_to_homePageFragmentScreen)
                     Log.d("success",it.data.toString())
 
                 }

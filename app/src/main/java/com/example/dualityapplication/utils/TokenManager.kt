@@ -20,4 +20,15 @@ class TokenManager @Inject constructor(@ApplicationContext context: Context) {
     fun getToken(): String? {
         return prefs.getString(Util.USER_TOKEN, null)
     }
+
+    fun saveId(token: String) {
+        val editor = prefs.edit()
+        editor.putString(Util.USER_ID, token)
+        editor.apply()
+    }
+
+    fun getId(): String? {
+        return prefs.getString(Util.USER_ID, null)
+    }
+
 }

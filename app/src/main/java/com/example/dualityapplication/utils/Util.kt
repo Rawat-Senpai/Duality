@@ -15,6 +15,7 @@ object Util {
     const val OTHERS="OTHERS"
 
     const val USER_TOKEN = "user_token"
+    const val USER_ID = "user_id"
     const val PREFS_TOKEN_FILE = "prefs_token_file"
 
     const val BASE_URL="https://ayooba-duality-project.vercel.app/api/v1/"

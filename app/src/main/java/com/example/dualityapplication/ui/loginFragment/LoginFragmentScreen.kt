@@ -22,7 +22,9 @@ import com.example.dualityapplication.utils.BaseUtils
 import com.example.dualityapplication.utils.BaseUtils.Companion.showToast
 import com.example.dualityapplication.utils.InternetConnection.isNetworkAvailable
 import com.example.dualityapplication.utils.NetworkResult
+import com.example.dualityapplication.utils.TokenManager
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 
 @AndroidEntryPoint
@@ -33,6 +35,8 @@ class LoginFragmentScreen : Fragment() {
     private var showPassword = false
     private val viewModel by viewModels<AuthViewModel>()
 
+    @Inject
+    lateinit var tokenManager: TokenManager
 
 
     override fun onCreateView(
@@ -47,6 +51,11 @@ class LoginFragmentScreen : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        if(!tokenManager.getToken().isNullOrBlank() || tokenManager.getToken()!=""){
+            findNavController().navigate(R.id.action_loginFragmentScreen_to_homePageFragmentScreen)
+        }
+
         bindObservers()
         bindViews()
     }
@@ -204,6 +213,8 @@ class LoginFragmentScreen : Fragment() {
                 }
 
                 is NetworkResult.Success -> {
+                    tokenManager.saveToken(it.data?.data?.token.toString())
+                    findNavController().navigate(R.id.action_loginFragmentScreen_to_homePageFragmentScreen)
                     Log.d("success",it.data.toString())
 
                 }
